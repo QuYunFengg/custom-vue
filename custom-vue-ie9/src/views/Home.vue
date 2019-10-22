@@ -14,8 +14,8 @@
             <div class="col-md-1"></div>
             <div class="col-md-2"></div>
             <div class="col-md-8">
-              <b-form-textarea class="main-input" placeholder="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
-              </b-form-textarea>
+              <textarea class="main-input" placeholder="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
+              </textarea>
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-7">
@@ -251,6 +251,8 @@ export default {
   margin-top: 20px;
   font-size: 13px;
   padding: 8px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .sub-tip {
