@@ -40,21 +40,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@media (min-width: 768px) {
-  .container {
-    width: 700px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 900px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1100px;
-  }
-}
 
 .header-font {
     margin-left: 25px;

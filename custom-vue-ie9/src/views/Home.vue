@@ -68,11 +68,11 @@
 		</section>
 
     <section id="wheel">
-				<div class="container main-div" style="paddingBottom: 50px;">
+				<div class="container main-div" style="paddingBottom: 50px">
 					<div class="row">
 						<div class="col-md-2"></div>
 						<div class="col-md-8 wow">
-							<h1 class="text-upper" style="color: #16AB8E;marginBottom: 20px;">AI翻译+人工翻译助力网文出海</h1>
+							<h1 class="text-upper" style="color: #16AB8E;marginBottom: 20px">AI翻译+人工翻译助力网文出海</h1>
 							<p class="tm-white">通过PE+MT模式创造即时性、本地化、规模化、竞逐行的翻译生产网络，
               与全球各国版权方译者、发行方通力合作，用创新模式传播中华文化，主力网文出海和文化交流传播。</p>
 						</div>
@@ -82,107 +82,139 @@
             </div>
             <div class="col-md-2"></div>
            <div class="col-md-12">
-              <b-carousel
-                id="carousel"
-                v-model="slide"
-                :interval="4000"
-                indicators
-                background="#F7F7F7"
-                img-width="1023"
-                img-height="480"
-                style="text-shadow: 1px 1px 2px #333;"
-              >
-                <b-carousel-slide img-blank="false" style="width: 100%">
-                  <div class="row" style="textAlign: center;width: 100%">
-                    <div class="col-md-3">
+              <div class="row" style="margin-top: 40px;">
+                <div id="owl-travel" class="owl-carousel">
+                  <div class="item">
+                    <div class="box-entry home-post carpathian">
                       <img src="../assets/1.png"/>
                     </div>
-                    <div class="col-md-3">
-                      <img src="../assets/2.png"/>
-                    </div>
-                    <div class="col-md-3">
-                      <img src="../assets/1.png"/>
-                    </div>
-                    <div class="col-md-3">
+                  </div>
+                  <div class="item">
+                    <div class="box-entry home-post carpathian">
                       <img src="../assets/2.png"/>
                     </div>
                   </div>
-                </b-carousel-slide>
-                <b-carousel-slide img-blank="false" style="width: 100%">
-                  <div class="row" style="textAlign: center;width: 100%">
-                    <div class="col-md-3">
+                  <div class="item">
+                    <div class="box-entry home-post carpathian">
                       <img src="../assets/1.png"/>
                     </div>
-                    <div class="col-md-3">
-                      <img src="../assets/2.png"/>
-                    </div>
-                    <div class="col-md-3">
-                      <img src="../assets/1.png"/>
-                    </div>
-                    <div class="col-md-3">
+                  </div>
+                  <div class="item">
+                    <div class="box-entry home-post carpathian">
                       <img src="../assets/2.png"/>
                     </div>
                   </div>
-                </b-carousel-slide>
-              </b-carousel>
+                  <div class="item">
+                    <div class="box-entry home-post carpathian">
+                      <img src="../assets/1.png"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 					</div>
 				</div>
 		</section>
 
     <section id="why">
-				<div class="container main-div" style="paddingBottom: 50px;">
+				<div class="mian-container main-div" style="paddingBottom: 50px;">
 					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8 wow">
-							<h1 class="text-upper" style="color: #16AB8E;marginBottom: 20px;">为什么选择Hitranslator</h1>
-						</div>
-            <div class="col-md-2"></div>
-            <div class="col-md-12">
-              <div class="col-md-4 " style="display: inline-block">
-                <div class="col-md-11 content-box">
-                  <img src="../assets/多语言.png"/>
-                  <p class="sub-text">全球母语译者</p>
-                  <p class="content-text">全球各地的母语译者以全新的方式为用户提供本地化服务</p>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8 wow">
+                <h1 class="text-upper" style="color: #16AB8E;marginBottom: 50px;">为什么选择Hitranslator</h1>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="box-simple">
+                    <img src="../assets/多语言.png"/>
+                    <p class="sub-text">全球母语译者</p>
+                    <p class="content-text">全球各地的母语译者以全新的方式为用户提供本地化服务</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="box-simple">
+                    <img src="../assets/icon-rgb_机器学习算法引擎.png"/>
+                    <p class="sub-text">智能翻译引擎</p>
+                    <p class="content-text">自主研发的只能AI翻译引擎为译者提供辅助翻译</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="box-simple">
+                    <img src="../assets/管理视图.png"/>
+                    <p class="sub-text">在线管理系统</p>
+                    <p class="content-text">自主研发的在线管理系统翻译系统、结算系统等</p>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-3 content-box">
-                <img src="../assets/icon-rgb_机器学习算法引擎.png"/>
-                <p class="sub-text">智能翻译引擎</p>
-                <p class="content-text">自主研发的只能AI翻译引擎为译者提供辅助翻译</p>
-              </div>
-              <div class="col-md-4 " style="display: inline-block">
-                <div class="col-md-11 content-box">
-                  <img src="../assets/管理视图.png"/>
-                  <p class="sub-text">在线管理系统</p>
-                  <p class="content-text">自主研发的在线管理系统翻译系统、结算系统等</p>
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="box-simple">
+                    <img src="../assets/1全球上传.png"/>
+                    <p class="sub-text">全球化网络</p>
+                    <p class="content-text">与全球24个国家的阅读平台建立了长期战略合作</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="box-simple">
+                    <img src="../assets/数据.png"/>
+                    <p class="sub-text">强大数据分析</p>
+                    <p class="content-text">拥有强大的本地化数据阅读偏好分析系统</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="box-simple">
+                    <img src="../assets/图层233.png"/>
+                    <p class="sub-text">友好合作模式</p>
+                    <p class="content-text">与全球译者、版权发行方建立了友好共赢的合作模式</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-12" style="marginTop: 30px;">
-              <div class="col-md-4 " style="display: inline-block">
-                <div class="col-md-11 content-box">
-                  <img src="../assets/1全球上传.png"/>
-                  <p class="sub-text">全球化网络</p>
-                  <p class="content-text">与全球24个国家的阅读平台建立了长期战略合作</p>
-                </div>
-              </div>
-              <div class="col-md-3 content-box">
-                <img src="../assets/数据.png"/>
-                <p class="sub-text">强大数据分析</p>
-                <p class="content-text">拥有强大的本地化数据阅读偏好分析系统</p>
-              </div>
-              <div class="col-md-4 " style="display: inline-block">
-                <div class="col-md-11 content-box">
-                  <img src="../assets/图层233.png"/>
-                  <p class="sub-text">友好合作模式</p>
-                  <p class="content-text">与全球译者、版权发行方建立了友好共赢的合作模式</p>
-                </div>
-              </div>
-            </div>
+              
 					</div>
 				</div>
 		</section>
+
+    <section id="partner">
+				<div class="container main-div pic-group" style="paddingBottom: 50px;">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 wow">
+              <h1 class="text-upper" style="color: #16AB8E;marginBottom: 50px;">合作伙伴</h1>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <div class="row">
+              <img src="../assets/partner/图层12.png" />      
+              <img src="../assets/partner/图层13.png" />      
+              <img src="../assets/partner/图层14.png" />      
+              <img src="../assets/partner/u95.png" />
+              <img src="../assets/partner/u98.png" />  
+              <img src="../assets/partner/u99.png" />  
+              <img src="../assets/partner/u100.png" />  
+              <img src="../assets/partner/u101.png" />  
+              <img src="../assets/partner/u102.png" />  
+              <img src="../assets/partner/u103.png" />      
+              <img src="../assets/partner/u104.png" />
+              <img src="../assets/partner/u105.png" />      
+              <img src="../assets/partner/u106.png" />      
+              <img src="../assets/partner/u107.png" />      
+              <img src="../assets/partner/u108.png" />
+              <img src="../assets/partner/u109.png" />  
+              <img src="../assets/partner/u112.png" />  
+              <img src="../assets/partner/u113.png" /> 
+              <img src="../assets/partner/图层15.png" />      
+              <img src="../assets/partner/图层16.png" />      
+              <img src="../assets/partner/图层17.png" />    
+					</div>
+				</div>
+		</section>
+
+   <Footer/>
 
   </div>
 </template>
@@ -190,17 +222,33 @@
 <script>
 // @ is an alias to /src
 import Nav from '@/components/Nav.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'home',
   components: {
-    Nav
+    Nav, Footer
   },
   data() {
     return {
-      slide: 0
+      slide: 0,
+      text: 123
     }
-  }
+  },
+  mounted() {
+      console.log(123);
+      $("#owl-travel").owlCarousel({
+          autoPlay: 3000,
+          items : 4,
+          itemsDesktop : [1199,3],
+          itemsDesktopSmall : [979,2],
+          navigation: false,
+          pagination: true
+      });
+  },
+  methods: {
+    
+  },
 }
 </script>
 
@@ -232,8 +280,40 @@ export default {
     border: 1px solid #16AB8E!important;
     background: #16AB8E!important;
   }
+@media (min-width: 768px) {
+  .mian-container {
+    width: 400px;
+  }
+  .container {
+    width: 700px;
+  }
+}
+@media (min-width: 992px) {
+  .mian-container {
+    width: 700px;
+  }
+  .container {
+    width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .mian-container {
+    width: 900px;
+  }
+  .container {
+    width: 1100px;
+  }
+}
 </style>
 <style scoped lang="scss">
+
+
+.mian-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 #home {
     background: url('../assets/Ellipse777copy7.png') no-repeat;
     background-size: cover;
@@ -253,6 +333,7 @@ export default {
   padding: 8px;
   width: 100%;
   border-radius: 5px;
+  color: #000;
 }
 
 .sub-tip {
@@ -303,8 +384,13 @@ export default {
   line-height: 14px;
   margin-top: -20px;
 }
-
-#wheel {
+.pic-group {
+  img {
+    margin-right: 10px;
+    margin-bottom: 40px;
+  }
+}
+#wheel,#footer-main {
   background: #F7F7F7;
   padding-top: 80px;
 
@@ -312,21 +398,19 @@ export default {
   width: 100%;
 }
 
-#why {
+#why,#partner {
   background: #fff;
   padding-top: 80px;
   text-align: center; 
   width: 100%;
 }
 
-.content-box {
+.box-simple {
+  margin-bottom: 40px;
   text-align: center;
   background: #EFEFEF;
-  width: 100%;
-  display: inline-block;  
-  padding-top: 20px;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  height: 180px;
+  padding: 30px;
   img {
     width: 40px;
     height: 40px;

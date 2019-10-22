@@ -1,33 +1,33 @@
 <template>
-   <b-navbar toggleable="lg" type="light" fixed>
-    <div class="container">
-        <b-navbar-brand href="#">
-            <img src="../assets/logo.png" style="width: 130px;"/>
-        </b-navbar-brand>
-
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav >
-            <b-nav-item href="#" class="header-font">首页</b-nav-item>
-            <b-nav-item href="#" class="header-font">翻译服务</b-nav-item>
-            <b-nav-item href="#" class="header-font active">搜索译者</b-nav-item>
-            <b-nav-item href="#" class="header-font">网文出海</b-nav-item>
-            <b-nav-item href="#" class="header-font">联系我们</b-nav-item>
-        </b-navbar-nav>
-
-        <b-navbar-nav class="ml-auto">
-            <b-nav-item href="#" class="header-font">用户注册</b-nav-item>
-            <b-nav-item href="#" class="header-font">译者注册</b-nav-item>
-            <b-nav-item href="#" class="header-font" style="margin-right: 15px;">登录</b-nav-item>
-            <b-nav-item-dropdown text="CH" right>
-                <b-dropdown-item href="#">CH</b-dropdown-item>
-            </b-nav-item-dropdown>
-
-        </b-navbar-nav>
-        </b-collapse>
-    </div>
-  </b-navbar>
+ 
+   
+    <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon icon-bar"></span>
+						<span class="icon icon-bar"></span>
+						<span class="icon icon-bar"></span>
+					</button>
+          <img src="../assets/logo.png" class="navbar-brand" style="width: 130px;"/>
+				</div>
+				<div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left text-uppercase">
+						<li><a href="#" class="header-font">首页</a></li>
+						<li><a href="#" class="header-font">翻译服务</a></li>
+						<li><a href="#" class="header-font active">搜索译者</a></li>
+						<li><a href="#" class="header-font">网文出海</a></li>
+            <li><a href="#" class="header-font">联系我们</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right text-uppercase">
+						<li><a href="#" class="header-font">用户注册</a></li>
+						<li><a href="#" class="header-font">译者注册</a></li>
+						<li><a href="#" class="header-font">登录</a></li>
+						<li><a href="#" class="header-font">CH</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 </template>
 
 <script>
@@ -52,23 +52,20 @@ export default {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1100px;
+    width: 1000px;
   }
 }
 
 .header-font {
-    margin-left: 25px;
-    a {
-        font-size: 13px; 
-        padding-left: 0px;
-        padding-top: 10px;
-        padding-right: 0px;
-    }
+    margin-left: 45px;
+    font-size: 13px; 
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 4px;
+    color: #000;   
 }
 .header-font.active {
-    a {
-        color: #16AB8E!important;   
-        border-bottom: 1px solid #16AB8E;
-    }
+    color: #16AB8E!important;   
+    border-bottom: 1px solid #16AB8E;
 }
 </style>
