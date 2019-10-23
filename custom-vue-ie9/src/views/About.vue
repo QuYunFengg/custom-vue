@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- 导航条-->
-    <Nav/>
-
     <section id="transltor">
 			<div class="container">
 				<div class="row">
@@ -61,21 +58,13 @@
 			</div>
 		</section>
 
-   <Footer/>
-
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Nav from '@/components/Nav.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'home',
-  components: {
-    Nav, Footer
-  },
   data() {
     return {
       slide: 0,

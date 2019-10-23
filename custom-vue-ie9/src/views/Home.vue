@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- 导航条-->
-    <Nav/>
     <!-- 输入框部分 -->
     <section id="home">
 				<div class="container main-div">
@@ -14,7 +12,8 @@
             <div class="col-md-1"></div>
             <div class="col-md-2"></div>
             <div class="col-md-8">
-              <textarea class="main-input" placeholder="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
+              <textarea id="textarea" style="border:0" class="main-input" placeholder="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
+              
               </textarea>
             </div>
             <div class="col-md-2"></div>
@@ -214,21 +213,15 @@
 				</div>
 		</section>
 
-   <Footer/>
 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Nav from '@/components/Nav.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'home',
-  components: {
-    Nav, Footer
-  },
   data() {
     return {
       slide: 0,
@@ -245,6 +238,55 @@ export default {
           navigation: false,
           pagination: true
       });
+      (function($,win,doc){
+        $.fn.extend({
+
+            textareaPlaceholer:function(){
+                var browser=navigator.appName 
+                var b_version=navigator.appVersion 
+                var version=b_version.split(";"); 
+                var trim_Version=version[1].replace(/[ ]/g,""); 
+                if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0" || browser=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0") 
+
+                //如果是IE8 或者 IE9
+                { 
+                    var placeholder = $(this).attr("placeholder");
+                    if (placeholder) {
+                        if ($(this).val().length <= 0) {
+                            $(this).val(placeholder).css("color","#999");
+                            $(this).focus(function(){
+                                if ($(this).val() == placeholder) {
+                                    $(this).val("").css("color","#333");
+                                }
+                                //监控删除按钮
+                                $(this).bind('keyup',function(e){
+                                    if (e.keyCode == 8) {
+                                        if ($(this).val().length == 0) {
+                                            $(this).val(placeholder).css("color","#999").blur();
+                                        }
+                                    }
+                                });
+                                
+                            }).blur(function(){
+                                if ($(this).val().length <= 0) {
+                                    $(this).val(placeholder).css("color","#999");
+                                }
+                            });
+
+                        }
+                            
+                    }
+
+                    
+                } 
+            }
+                
+        });    
+
+
+    })(jQuery,window,document);
+
+        $("#textarea").textareaPlaceholer();
   },
   methods: {
     
@@ -307,7 +349,15 @@ export default {
 </style>
 <style scoped lang="scss">
 
-
+.ieTextarea{
+　　color:#999!important;
+　　position:absolute;
+　　top:18px;
+　　left:30px;
+}
+.ieTextHide{
+　　display: none;
+}
 .mian-container {
   padding-right: 15px;
   padding-left: 15px;
