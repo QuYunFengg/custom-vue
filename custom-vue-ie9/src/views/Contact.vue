@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="menu-main">
-            <div class="container" style="textAlign: left">
+            <div class="container" style="textAlign: left;height: auto;overflow-y:auto">
                 <span class="font-text">中国市场</span>
                 <span class="font-text active">越南语市场</span>
                 <span class="font-text">英语市场</span>
@@ -32,7 +32,7 @@
     <section id="about">
 			<div class="container">
                 <div class="row" style="background: #F5F5F7">
-                    <div class="col-md-9" style="paddingLeft: 0px;">
+                    <div class="col-md-9" style="paddingLeft: 0px;paddingRight: 0px">
                         <img src="../assets/图层232.png" class="img-responsive" alt="feature img">
                     </div>
                     <div class="col-md-3 fadeInRight" style="padding: 0px;">
@@ -74,6 +74,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@media (max-width: 430px) {
+  #transltor {
+    padding-bottom: 200px!important;
+  }
+}
+@media (min-width: 430px)and(max-width: 993px) {
+  #transltor {
+    padding-bottom: 150px!important;
+  }
+}
+
 #transltor{
   background: #fff;
   padding-top: 80px;
@@ -83,16 +94,18 @@ export default {
   position: relative;
 }
 
+
+
 .menu-main {
     position: absolute;
     bottom: 0px;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
-    height: 50px;
 }
 
 .font-text {
     width: 12%;
+    min-width: 100px;
     display: inline-block;
     height: 50px;
     font-size: 16px;

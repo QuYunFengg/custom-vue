@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div data-spy="scroll">
     <!-- 输入框部分 -->
-    <section id="home">
+    <section id="home" style="marginTop: 50px;">
 				<div class="container main-div">
 					<div class="row">
 						<div class="col-md-1"></div>
@@ -13,7 +13,6 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
               <textarea id="textarea" style="border:0" class="main-input" placeholder="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
-              
               </textarea>
             </div>
             <div class="col-md-2"></div>
@@ -366,7 +365,7 @@ export default {
 }
 #home {
     background: url('../assets/Ellipse777copy7.png') no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     color: #fff;
     text-align: center;
     width: 100%;

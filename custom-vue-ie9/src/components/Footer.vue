@@ -13,8 +13,8 @@
               <img src="../assets/logo.png" class="navbar-brand" style="width: 230px;height: 70px;"/>
             </div>
               <ul class="nav navbar-nav navbar-left text-uppercase">
-                <li><a href="#" class="header-font" @click="toUrl('about')">关于我们</a></li>
-                <li><a href="#" class="header-font" @click="toUrl('contact')">联系我们</a></li>
+                <li><a  class="header-font" @click="toUrl('about')">关于我们</a></li>
+                <li><a  class="header-font" @click="toUrl('contact')">联系我们</a></li>
                 <li><a href="#" class="header-font">招纳贤士</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right text-uppercase">
@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     toUrl(path) {
-      this.$router.push(`/${path}`)
+      this.$router.push(`${path}`)
     }
   },  
 }
@@ -64,5 +64,8 @@ hr {
     margin-bottom: 0px;
     border: 0;
     border-top: 1px dashed #eee;
+}
+ul li a {
+  cursor: pointer;
 }
 </style>

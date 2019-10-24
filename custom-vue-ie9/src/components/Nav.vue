@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
-			<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+			<div class="footer container">
 				<div class="navbar-header">
 					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon icon-bar"></span>
@@ -11,17 +11,17 @@
 				</div>
 				<div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left text-uppercase">
-						<li :class="path =='home' ? 'active': ''"><a href="#" :class="`header-font ${path =='home' ? 'active':''}`" @click="toUrl()">首页</a></li>
-						<li><a href="#" class="header-font">翻译服务</a></li>
+						<li :class="path =='home' ? 'active': ''"><a :href="`${path =='home' ? '#home':''}`" :class="`header-font ${path =='home' ? 'active':''}`" @click="toUrl('home')">首页</a></li>
+						<li><a href="#transltor" style="background:#e7e7e7" class="header-font">翻译服务</a></li>
 						<li class=""><a href="#" class="header-font">搜索译者</a></li>
 						<li><a href="#" class="header-font">网文出海</a></li>
-            <li><a href="#" class="header-font">联系我们</a></li>
+            <li :class="path =='contact' ? 'active': ''"><a :class="`header-font ${path =='contact' ? 'active':''}`" @click="toUrl('contact')">联系我们</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right text-uppercase">
 						<li><a href="#" class="header-font">用户注册</a></li>
 						<li><a href="#" class="header-font">译者注册</a></li>
 						<li><a href="#" class="header-font">登录</a></li>
-						<li class="dropdown" style="paddingLeft: 20px;">
+						<li class="dropdown padding-left" style="paddingLeft: 20px;">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CH <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">EN</a></li>
@@ -32,7 +32,20 @@
 			</div>
 		</nav>
 </template>
-
+<script>
+export default {
+  name: 'home',
+  data() {
+    return {
+      slide: 0,
+      text: 123
+    }
+  },
+  mounted() {
+    
+  }
+}
+</script>
 <script>
 export default {
   name: 'Nav',
@@ -55,8 +68,8 @@ export default {
     }
   },
   methods: {
-    toUrl() {
-      this.$router.push('/')
+    toUrl(path) {
+      this.$router.push({name: path})
     }
   },
 }
@@ -64,6 +77,12 @@ export default {
 
 <style scoped lang="scss">
 @media (max-width: 768px) {
+  .header-font {
+    margin-left: 0px!important;
+  }
+  .padding-left {
+    padding-left:0!important;
+  }
   .navbar-collapse .active {
     background: #16AB8E!important;
     a {
@@ -75,18 +94,23 @@ export default {
   .container {
     width: 700px;
   }
+  .footer.container{
+    width: 700px;
+  }
   .header-font.active {
-    background: #fff!important;
+    background: transparent!important;
     color: #000;
   }
-  
 }
-@media (min-width: 992px) {
+@media (max-width: 768px) and (min-width: 992px) {
   .container {
     width: 900px;
   }
+  .footer.container{
+    width: 950px;
+  }
   .header-font.active {
-    background: #fff!important;
+    background: transparent!important;
     color: #000;
   }
 }
@@ -94,12 +118,17 @@ export default {
   .container {
     width: 1000px;
   }
+  .footer.container{
+    width: 1100px;
+  }
   .header-font.active {
-    background: #fff!important;
+    background: transparent!important;
     color: #000;
   }
 }
-
+.padding-left {
+  padding-left:20px;
+}
 .header-font {
     margin-left: 45px;
     font-size: 13px; 
@@ -111,5 +140,8 @@ export default {
 .header-font.active {
     color: #16AB8E!important;   
     border-bottom: 1px solid #16AB8E;
+}
+ul li a {
+  cursor: pointer;
 }
 </style>
