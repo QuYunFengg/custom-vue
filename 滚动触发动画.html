@@ -29,11 +29,73 @@
                 $('#animate-div').removeClass('animated slideInRight')
             }
         });
+        window.onload = function () {
+            function animateText(str,doc) {
+                console.log(str.split(''))
+                let a = str.length;
+                let showText = '';
+                let i = 0;
+                let timeer = setInterval(function () {
+                    if (i >= str.length-1) {
+                        clearInterval(timeer);
+                    }
+                    showText = showText+str.split('')[i]
+                    $(doc).val(showText).css("color","#999");
+                    i++;
+                }, 300);
+            }
+        (function($,win,doc){
+        $.fn.extend({
+
+            textareaPlaceholer:function(){
+                var browser=navigator.appName 
+                var b_version=navigator.appVersion 
+                var version=b_version.split(";"); 
+                var trim_Version=version[1].replace(/[ ]/g,""); 
+                var placeholder = $(this).attr("placeholder");
+                console.log($(this).attr("placeholder"));
+                if (placeholder) {
+                        console.log('走了这里', $(this).val(), $(this).val().length)
+                    if ($(this).val().length <= 0) {
+                        animateText(placeholder, this);
+                        $(this).focus(function(){
+                            if ($(this).val() == placeholder) {
+                                $(this).val("").css("color","#333");
+                            }
+                            //监控删除按钮
+                            $(this).bind('keyup',function(e){
+                                if (e.keyCode == 8) {
+                                    if ($(this).val().length == 0) {
+                                        $(this).val(placeholder).css("color","#999").blur();
+                                    }
+                                }
+                            });
+                            
+                        }).blur(function(){
+                            if ($(this).val().length <= 0) {
+                                $(this).val(placeholder).css("color","#999");
+                            }
+                        });
+
+                    }
+                }
+            }
+        });    
+    })(jQuery,window,document);
+    $("#textarea").textareaPlaceholer();
+        }
+        $('#textarea').blur(function() {
+
+        })
+        $('#textarea').focus(function() {
+            
+        });
+        
     </script>
 </head>
 <body>
 <div id="app">
-
+    <textarea id="textarea" placeholder="测试啊啊啊啊啊啊"></textarea>
 </div>
 <div style="height: 400px;"></div>
 <div id="animate-div" class="">
