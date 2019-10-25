@@ -1,5 +1,5 @@
 <template>
-  <div data-spy="scroll">
+  <div>
     <!-- 输入框部分 -->
     <section id="home" style="marginTop: 50px;">
 				<div class="container main-div">

@@ -12,7 +12,7 @@
 				<div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left text-uppercase">
 						<li :class="path =='home' ? 'active': ''"><a :href="`${path =='home' ? '#home':''}`" :class="`header-font ${path =='home' ? 'active':''}`" @click="toUrl('home')">首页</a></li>
-						<li><a href="#transltor" style="background:#e7e7e7" class="header-font">翻译服务</a></li>
+						<li><a  class="header-font" href="#transltor">翻译服务</a></li>
 						<li class=""><a href="#" class="header-font">搜索译者</a></li>
 						<li><a href="#" class="header-font">网文出海</a></li>
             <li :class="path =='contact' ? 'active': ''"><a :class="`header-font ${path =='contact' ? 'active':''}`" @click="toUrl('contact')">联系我们</a></li>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>应急指挥平台</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="keywords" content="应急指挥平台" />
+    <!--<link rel="stylesheet" href="//at.alicdn.com/t/font_690203_cz7a1uk35tc.css">--><!--test-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        #app {
+            width: 100vw;
+            height: 100vh;
+        }
+        #animate-div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        $(window).on('scroll', function() {
+            var h = $("#animate-div").offset().top;
+            if($(window).height()+$(document).scrollTop() >= h){
+                // 滚动到指定位置
+                $('#animate-div').addClass('animated slideInRight')
+            } else {
+                $('#animate-div').removeClass('animated slideInRight')
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="app">
+
+</div>
+<div style="height: 400px;"></div>
+<div id="animate-div" class="">
+
+</div>
+</body>
+</html>
