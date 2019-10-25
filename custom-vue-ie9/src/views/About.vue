@@ -83,16 +83,16 @@ export default {
 <style scoped lang="scss">
 #transltor{
   background: #fff;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background: url('../assets/图层239.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 #static {
   background: #fff;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 20px;
+  padding-bottom: 0px;
 }
 .static-tip {
   margin-bottom: 30px;
@@ -108,7 +108,7 @@ export default {
 }
 #about {
   background: #fff;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 }
 .img-responsive {
   width: 450px;

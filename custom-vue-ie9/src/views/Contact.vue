@@ -30,14 +30,14 @@
     </section>
 
     <section id="about">
-			<div class="container">
+			<div class="container containerss">
                 <div class="row" style="background: #F5F5F7">
                     <div class="col-md-9" style="paddingLeft: 0px;paddingRight: 0px">
                         <img src="../assets/图层232.png" class="img-responsive" alt="feature img">
                     </div>
                     <div class="col-md-3 fadeInRight" style="padding: 0px;">
                         <div class="row" style="marginTop: 45px;paddingLeft: 20px;">
-                            <div class="col-md-12 contact-content" style="textAlign: left">
+                            <div class="col-md-12 contact-content" style="textAlign: left;paddingBottom: 40px;">
                                 <p style="">+86 15129272512</p>
                                 <p style="">+86 02985795672</p>
                                 <p style="">HI@Hitranslator.com</p>
@@ -85,6 +85,22 @@ export default {
   }
 }
 
+@media (min-width: 768px) {
+  .containerss {
+    width: 400px;
+  }
+}
+@media (min-width: 992px) {
+  .containerss {
+    width: 700px;
+  }
+}
+@media (min-width: 1200px) {
+  .containerss {
+    width: 1000px;
+  }
+}
+
 #transltor{
   background: #fff;
   padding-top: 80px;
@@ -112,7 +128,6 @@ export default {
     color: #fff;
     line-height: 50px;
     text-align: center;
-    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
 }
 .font-text.active {
     background: #3F9989;
@@ -141,8 +156,8 @@ export default {
 }
 #about {
   background: #fff;
-  padding-bottom: 80px;
-  padding-top: 80px;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 .img-responsive {
   width: 100%;

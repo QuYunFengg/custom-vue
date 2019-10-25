@@ -7,7 +7,7 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-          <img src="../assets/logo.png" class="navbar-brand" style="width: 156px;height: 30px;padding:0px;marginTop: 10px;"/>
+          <img src="../assets/logo.png" class="navbar-brand" style="width: 156px;height: 30px;padding:0px;marginTop: 10px;marginLeft: 10px;"/>
 				</div>
 				<div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left text-uppercase">

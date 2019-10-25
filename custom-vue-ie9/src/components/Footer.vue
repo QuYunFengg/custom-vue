@@ -4,13 +4,10 @@
      <section id="footer-main" style="paddingTop: 0px;">
         <nav class="container">
           <div>
-            <div class="navbar-header" style="height: 70px;">
-              <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon icon-bar"></span>
-                <span class="icon icon-bar"></span>
-                <span class="icon icon-bar"></span>
-              </button>
-              <img src="../assets/logo.png" class="navbar-brand" style="width: 230px;height: 70px;"/>
+            <div class="navbar-header " style="height: 70px;">
+              <div style="width: 100%;textAlign: center">
+                <img src="../assets/logo.png" class="navbar-brand nav-bar-footer" style="width: 230px;height: 70px;"/>
+              </div>
             </div>
               <ul class="nav navbar-nav navbar-left text-uppercase">
                 <li><a  class="header-font" @click="toUrl('about')">关于我们</a></li>
@@ -55,6 +52,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@media (max-width: 1000px) {
+  .nav-bar-footer {
+      float: none!important;
+  }
+}
+
 #footer-main .header-font {
   color: #000;
   line-height: 50px;

@@ -12,7 +12,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-2"></div>
             <div class="col-md-8">
-              <textarea id="textarea" style="border:0" class="main-input" placeholder="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
+              <textarea id="textarea" style="border:0" class="main-input" placeholders="请输入或者粘贴您需要翻译的内容（200字/小时回稿速度）">
               </textarea>
             </div>
             <div class="col-md-2"></div>
@@ -43,15 +43,15 @@
               </div>
               <div class="col-md-10" style="textAlign: left;">
                 <div class="static-text">
-                  <p>8023</p>
+                  <p>{{a}}</p>
                   <p>译者人数</p>
                 </div>
                 <div class="static-text" >
-                  <p>64</p>
+                  <p>{{b}}</p>
                   <p>分布地区</p>
                 </div>
                 <div class="static-text" >
-                  <p>274</p>
+                  <p>{{c}}</p>
                   <p>语言种类</p>
                 </div>
               </div>
@@ -127,21 +127,21 @@
             <div class="row">
               <div class="row">
                 <div class="col-lg-4 col-md-6">
-                  <div class="box-simple">
+                  <div class="box-simple leftDom">
                     <img src="../assets/多语言.png"/>
                     <p class="sub-text">全球母语译者</p>
                     <p class="content-text">全球各地的母语译者以全新的方式为用户提供本地化服务</p>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <div class="box-simple">
+                  <div class="box-simple topDom">
                     <img src="../assets/icon-rgb_机器学习算法引擎.png"/>
                     <p class="sub-text">智能翻译引擎</p>
                     <p class="content-text">自主研发的只能AI翻译引擎为译者提供辅助翻译</p>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <div class="box-simple">
+                  <div class="box-simple rightDom">
                     <img src="../assets/管理视图.png"/>
                     <p class="sub-text">在线管理系统</p>
                     <p class="content-text">自主研发的在线管理系统翻译系统、结算系统等</p>
@@ -150,21 +150,21 @@
               </div>
               <div class="row">
                 <div class="col-lg-4 col-md-6">
-                  <div class="box-simple">
+                  <div class="box-simple leftDom">
                     <img src="../assets/1全球上传.png"/>
                     <p class="sub-text">全球化网络</p>
                     <p class="content-text">与全球24个国家的阅读平台建立了长期战略合作</p>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <div class="box-simple">
+                  <div class="box-simple topDom">
                     <img src="../assets/数据.png"/>
                     <p class="sub-text">强大数据分析</p>
                     <p class="content-text">拥有强大的本地化数据阅读偏好分析系统</p>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <div class="box-simple">
+                  <div class="box-simple rightDom">
                     <img src="../assets/图层233.png"/>
                     <p class="sub-text">友好合作模式</p>
                     <p class="content-text">与全球译者、版权发行方建立了友好共赢的合作模式</p>
@@ -224,11 +224,38 @@ export default {
   data() {
     return {
       slide: 0,
-      text: 123
+      text: 123,
+      a: 7987,
+      b: 51,
+      c: 251
     }
   },
   mounted() {
-      console.log(123);
+      $(window).on('scroll', function() {
+          var h = $("#why").offset().top;
+          if($(window).height()+$(document).scrollTop() >= h){
+              // 滚动到指定位置
+              $('.box-simple.leftDom').each(function () {
+                $(this).addClass('animated slideInLeft');
+              })
+              $('.box-simple.topDom').each(function () {
+                $(this).addClass('animated slideInUp');
+              })
+              $('.box-simple.rightDom').each(function () {
+                $(this).addClass('animated slideInRight');
+              })
+          } else {
+              $('.box-simple.leftDom').each(function () {
+                $(this).removeClass('animated slideInLeft');
+              })
+              $('.box-simple.topDom').each(function () {
+                $(this).removeClass('animated slideInUp');
+              })
+              $('.box-simple.rightDom').each(function () {
+                $(this).removeClass('animated slideInRight');
+              })
+          }
+      });
       $("#owl-travel").owlCarousel({
           autoPlay: 3000,
           items : 4,
@@ -237,58 +264,89 @@ export default {
           navigation: false,
           pagination: true
       });
+      let i = 0;
+      let timeer = null
+      function animateText(str,doc) {
+          console.log(str.split(''))
+          let a = str.length;
+          let showText = '';
+          timeer = setInterval(function () {
+              if (i >= str.length-1) {
+                  clearInterval(timeer);
+              }
+              showText = showText+str.split('')[i]
+              $(doc).val(showText).css("color","#999");
+              i++;
+          }, 300);
+      }
       (function($,win,doc){
         $.fn.extend({
-
             textareaPlaceholer:function(){
                 var browser=navigator.appName 
                 var b_version=navigator.appVersion 
                 var version=b_version.split(";"); 
                 var trim_Version=version[1].replace(/[ ]/g,""); 
-                if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0" || browser=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0") 
-
-                //如果是IE8 或者 IE9
-                { 
-                    var placeholder = $(this).attr("placeholder");
-                    if (placeholder) {
-                        if ($(this).val().length <= 0) {
-                            $(this).val(placeholder).css("color","#999");
-                            $(this).focus(function(){
-                                if ($(this).val() == placeholder) {
-                                    $(this).val("").css("color","#333");
-                                }
-                                //监控删除按钮
-                                $(this).bind('keyup',function(e){
-                                    if (e.keyCode == 8) {
-                                        if ($(this).val().length == 0) {
-                                            $(this).val(placeholder).css("color","#999").blur();
-                                        }
+                var placeholder = $(this).attr("placeholders");
+                if (placeholder) {
+                    if ($(this).val().length <= 0) {
+                        // $(this).val(placeholder).css("color","#999");
+                        animateText(placeholder, this);
+                        $(this).focus(function(){
+                            if (i<28) {
+                              console.log(12312312);
+                              i = 28;
+                              $(this).val("").css("color","#333");
+                              if (timeer) {
+                                clearInterval(timeer);
+                              }
+                            }
+                            if ($(this).val() == placeholder) {
+                              $(this).val("").css("color","#333");
+                            }
+                            //监控删除按钮
+                            $(this).bind('keyup',function(e){
+                                if (e.keyCode == 8) {
+                                    if ($(this).val().length == 0) {
+                                        $(this).val(placeholder).css("color","#999").blur();
                                     }
-                                });
-                                
-                            }).blur(function(){
-                                if ($(this).val().length <= 0) {
-                                    $(this).val(placeholder).css("color","#999");
                                 }
                             });
-
-                        }
-                            
+                        }).blur(function(){
+                            if ($(this).val().length <= 0) {
+                                $(this).val(placeholder).css("color","#999");
+                            }
+                        });
                     }
-
-                    
-                } 
+                }
             }
-                
         });    
 
 
     })(jQuery,window,document);
-
-        $("#textarea").textareaPlaceholer();
+    $("#textarea").textareaPlaceholer();
+    this.initNum()
   },
   methods: {
-    
+    initNum() {
+      let aTimer = setInterval(()=>{
+        if (this.a == 8023) {
+          clearInterval(aTimer);
+        }
+        this.a++;
+      }, 50);
+      let bTimer = setInterval(()=>{
+        if (this.b == 64) {
+          clearInterval(bTimer);
+        }
+        this.b++;
+      }, 50);
+      let cTimer = setInterval(()=>{
+        if (this.c == 274) {
+          clearInterval(cTimer);
+        }
+        this.c++;
+      }, 50);
+    }
   },
 }
 </script>
@@ -404,6 +462,7 @@ export default {
   font-size: 13px;
   cursor: pointer;
   text-align: center;
+  margin-bottom:10px;
 }
 
 #transltor{
