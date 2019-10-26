@@ -3,6 +3,9 @@
     <Nav />
     <router-view/>
     <Footer/>
+    <div id="qrcode" class="qrcode-div hidden" @click="hideQrcode">
+      <img src="./assets/微信图片_20191026094500.jpg" style="position: absolute;top: 50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);left: 50%"/>
+    </div>
   </div>
 </template>
 
@@ -22,13 +25,30 @@ export default {
     },
   },
   mounted() {
-    
   },
+  methods:{
+    hideQrcode() {
+      $('#qrcode').addClass('hidden');
+    },
+  }
 }
 </script>
 
 
 <style lang="scss">
+.hidden {
+  display: none;
+}
+.qrcode-div {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  transition: display 0.3s
+}
 .navbar {
   margin-bottom: 0px;
 }

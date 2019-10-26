@@ -18,7 +18,7 @@
                 <li><a><img src="../assets/12facebook.png" style="width: 30px;margin-top:10px;"/></a></li>
                 <li><a><img src="../assets/Twitter.png" style="width: 30px;margin-top:10px;"/></a></li>
                 <li><a><img src="../assets/微博.png" style="width: 30px;margin-top:12px;"/></a></li>
-                <li><a><img src="../assets/微信.png" style="width: 30px;margin-top:12px;"/></a></li>
+                <li><a @click="showQryc"><img src="../assets/微信.png" style="width: 30px;margin-top:12px;"/></a></li>
               </ul>
           </div>
         </nav>
@@ -46,6 +46,10 @@ export default {
   methods: {
     toUrl(path) {
       this.$router.push(`${path}`)
+    },
+    showQryc() {
+      console.log(123213);
+      $('#qrcode').removeClass('hidden')
     }
   },  
 }

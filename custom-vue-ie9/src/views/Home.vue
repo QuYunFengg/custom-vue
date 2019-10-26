@@ -212,7 +212,7 @@
 				</div>
 		</section>
 
-
+    
   </div>
 </template>
 
@@ -231,7 +231,9 @@ export default {
     }
   },
   mounted() {
+      let this_ = this;
       $(window).on('scroll', function() {
+          // 动画效果
           var h = $("#why").offset().top;
           if($(window).height()+$(document).scrollTop() >= h){
               // 滚动到指定位置
@@ -244,6 +246,7 @@ export default {
               $('.box-simple.rightDom').each(function () {
                 $(this).addClass('animated slideInRight');
               })
+              
           } else {
               $('.box-simple.leftDom').each(function () {
                 $(this).removeClass('animated slideInLeft');
@@ -254,6 +257,14 @@ export default {
               $('.box-simple.rightDom').each(function () {
                 $(this).removeClass('animated slideInRight');
               })
+          }
+          // 滚动跟随 
+          if ($(document).scrollTop()>$("#wheel").offset().top - 100) {
+              this_.addActiveClass('4');
+          } else if ($(document).scrollTop()>$("#transltor").offset().top - 180) {
+              this_.addActiveClass('3');
+          } else if ($(document).scrollTop()>$("#home").offset().top - 100) {
+              this_.addActiveClass('2');
           }
       });
       $("#owl-travel").owlCarousel({
@@ -327,6 +338,16 @@ export default {
     this.initNum()
   },
   methods: {
+    addActiveClass(index) {
+      $('#navs li').each(function () {
+        $(this).removeClass('active');
+      })
+      $('#navs a').each(function () {
+        $(this).removeClass('active')
+      })
+      $(`#${index}`).addClass('active');
+      $(`#${index}a`).addClass('active');
+    },
     initNum() {
       let aTimer = setInterval(()=>{
         if (this.a == 8023) {
@@ -352,6 +373,7 @@ export default {
 </script>
 
 <style>
+
 .carousel-caption {
   position: absolute;
   z-index: 10;
